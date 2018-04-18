@@ -5,8 +5,8 @@
   <ul>
     <% @book.reviews.each do |review| %>
       <li>
-        <%= review.username %> |
-        <%= review.text %> |
+        Username: <%= review.username %> |
+        Text: <%= review.text %> |
         <%= link_to "Delete", book_review_path(@book, review),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>

@@ -4,6 +4,11 @@ class BooksController < ApplicationController
     render :index
   end
 
+  def alpha_index
+    @books = Book.alphabetize
+    render :index
+  end
+
   def show
     @book = Book.find(params[:id])
     render :show
