@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @review %>
+
+<%= form_for [@book, @review] do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: 1..10, step: 1 %>
+  <%= f.submit  %>
+<% end %>
