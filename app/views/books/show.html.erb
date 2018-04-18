@@ -7,6 +7,7 @@
       <li>
         Username: <%= review.username %> |
         Text: <%= review.text %> |
+        Rating: <%= review.rating %> |
         <%= link_to "Delete", book_review_path(@book, review),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
