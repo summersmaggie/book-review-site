@@ -16,15 +16,18 @@ class Book < ActiveRecord::Base
     where(published: year..2018)
   end
 
-  # def self.search(query)
-  #   where(title: query)
+  #class method of scope alphabetize
+  # def self.alphabetize
+  #   self.order('title ASC')
   # end
 
-  def self.alphabetize
-    self.order('title ASC')
-  end
+  scope :alphabetize, -> { order('title ASC')}
 
-  def self.year
-    self.order('published ASC')
-  end
+  #class method of scope year
+  # def self.year
+  #   self.order('published ASC')
+  # end
+
+  scope :year, -> { order('published ASC')}
+
 end

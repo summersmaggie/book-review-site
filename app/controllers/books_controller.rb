@@ -9,6 +9,11 @@ class BooksController < ApplicationController
     render :index
   end
 
+  def year_index
+    @books = Book.year
+    render :index
+  end
+
   def show
     @book = Book.find_by_slug(params[:id])
     render :show
