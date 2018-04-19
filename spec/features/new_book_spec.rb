@@ -32,4 +32,13 @@ describe "add a new book process" do
     click_on 'Create Review'
     expect(page).to have_content 'Michael Nyman'
   end
+
+  it "allows redirect to index page from book show page" do
+    new_book = Book.create(title: 'Learn How To Program',
+                            published: 2012,
+                            author: 'Michael Nyman')
+    visit book_path(new_book)
+    click_on 'Return to books'
+    expect(page).to have_content 'Alphabetize'
+  end
 end
