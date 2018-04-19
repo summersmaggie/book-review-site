@@ -10,8 +10,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    # @book = Book.find_by_slug(params[:id])
-    # render :show
+    @book = Book.find_by_slug(params[:id])
+    render :show
   end
 
   def new
