@@ -21,5 +21,15 @@ describe "add a new book process" do
     expect(page).to have_content 'Learn How To Code'
   end
 
-  
+  it "allows adding a review" do
+    new_book = Book.create(title: 'Learn How To Program',
+                            published: 2012,
+                            author: 'Michael Nyman')
+    visit new_book_review_path(new_book)
+    fill_in 'Username', :with => 'Michael Nyman'
+    fill_in 'Text', :with => 'Best book ever!'
+    fill_in 'Rating', :with => 10
+    click_on 'Create Review'
+    expect(page).to have_content 'Michael Nyman'
+  end
 end
