@@ -19,7 +19,7 @@
 <p><%= link_to "Add a review", new_book_review_path(@book) %></p>
 
 <p><%= link_to "Edit", edit_book_path(@book) %></p>
-<p><%= link_to "Delete", book_path(@book),
+<p><%= link_to "Delete", book_path,
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 

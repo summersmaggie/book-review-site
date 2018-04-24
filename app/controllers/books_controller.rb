@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authorize, only: [:edit, :new]
+
   def index
     @books = Book.all
     render :index
@@ -50,7 +52,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find_by_slug(params[:id])
     @book.destroy
-    redirect_to books_path
+    redirect_to book_path
   end
 
 private
